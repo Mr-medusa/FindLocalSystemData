@@ -102,10 +102,12 @@ public class FindSystemDataProxy {
         String fieldName = "";
         boolean requireMsg = false, requireMsgForCq = false;
         String value = number.get();
+        String entityNumber = "";
         if (this.info != null) {
             fieldName = this.info.value();
             requireMsg = this.info.requireMsg();
             requireMsgForCq = this.info.requireMsgForLocalSystem();
+            entityNumber = this.info.entityNumber();
             this.info = null;
         }
         if (requireMsg) {

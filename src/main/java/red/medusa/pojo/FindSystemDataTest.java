@@ -27,5 +27,22 @@ public class FindSystemDataTest {
         findSystemDataProxy2.findObjectByNumber(proxy2::getName)
                 .withNotNull(System.out::println);
 
+        try {
+            proxy2.setName("");
+            findSystemDataProxy2.findObjectByNumber(proxy2::getName)
+                    .withNotNull(System.out::println);
+        } catch (Exception e) {
+            System.out.println(e.getClass());   // java.lang.IllegalArgumentException
+            System.out.println(e.getMessage()); // 张三是必录参数
+        }
+
+        try {
+            proxy2.setName("3");
+            findSystemDataProxy2.findObjectByNumber(proxy2::getName)
+                    .withNotNull(System.out::println);
+        } catch (Exception e) {
+            System.out.println(e.getClass());   // java.lang.IllegalArgumentException
+            System.out.println(e.getMessage()); // 张三在系统未匹配到对应数据
+        }
     }
 }

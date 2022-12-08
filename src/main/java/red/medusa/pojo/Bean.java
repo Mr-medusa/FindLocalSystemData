@@ -10,7 +10,7 @@ import red.medusa.finddata.SystemDataInfo;
 @NoArgsConstructor
 public class Bean {
 
-    @SystemDataInfo(value = "名字", entityNumber = "", requireMsg = true, requireMsgForLocalSystem = true)
+    @SystemDataInfo(value = "张三", entityNumber = "本地系统数据源", requireMsg = true, requireMsgForLocalSystem = true)
     public String name;
 
     public String getName() {
